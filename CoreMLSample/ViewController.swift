@@ -131,6 +131,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate {
                 .filter({ $0.confidence >= 0.05 })
                 .filter({ weapons.contains($0.identifier)})
                 .map({ "\($0.identifier) \($0.confidence)" })
+            if (classifications.count >= 1 ) {print((classifications[0] as? VNClassificationObservation)?.confidence)}
+            
+            if (classifications.count >= 1) {
+                let strArray = classifications[0].components(separatedBy: " ")
+                let confidence = strArray[strArray.count - 1]
+                print(confidence)
+                
+                if let confidence = Double(confidence) {
+                    if (confidence >= 0.35) {
+                        AudioServicesPlayAlertSound(SystemSoundID(1322))
+                        VideoHelper.startMediaBrowser(delegate: self, sourceType: .camera)
+                    }
+                }
+            }
             DispatchQueue.main.async {
                 self.predictLabel.text = classifications.joined(separator: "\n")
 //                if(classifications.count >= 1) {
@@ -140,7 +154,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate {
 //                        else {self.caud = 5}
 //                    print("confidence: \(confidence)")
 //                }
-
             }
             
         }
