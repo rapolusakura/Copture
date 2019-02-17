@@ -137,6 +137,9 @@
                             </button>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="D5b-Jd-s62" id="7Pe-xc-OXa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ddb-GB-knQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

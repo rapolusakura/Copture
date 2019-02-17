@@ -38,9 +38,20 @@ class VideoHelper {
     let mediaUI = UIImagePickerController()
     mediaUI.sourceType = sourceType
     mediaUI.mediaTypes = [kUTTypeMovie as String]
-    mediaUI.allowsEditing = true
     mediaUI.delegate = delegate
     delegate.present(mediaUI, animated: true, completion: nil)
+    
+    
+    let captureSession = AVCaptureSession() 
+    captureSession.beginConfiguration()
+    let videoDevice = AVCaptureDevice.default(.builtInWideAngleCamera,
+                                              for: .video, position: .unspecified)
+    guard
+        let videoDeviceInput = try? AVCaptureDeviceInput(device: videoDevice!),
+        captureSession.canAddInput(videoDeviceInput)
+        else { return }
+    captureSession.addInput(videoDeviceInput)
+    
   }
   
   static func orientationFromTransform(_ transform: CGAffineTransform) -> (orientation: UIImageOrientation, isPortrait: Bool) {

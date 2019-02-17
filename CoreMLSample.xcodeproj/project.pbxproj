@@ -10,8 +10,8 @@
 		39E49870D1D278436A5D23D0 /* Pods_CoreMLSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D71B44819C0A75797B48A8F /* Pods_CoreMLSample.framework */; };
 		444EC5882219696D00866069 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 444EC5872219696D00866069 /* GoogleService-Info.plist */; };
 		444EC58C2219BC2100866069 /* VideoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444EC58B2219BC2100866069 /* VideoHelper.swift */; };
+		444EC58E2219C44B00866069 /* lol.png in Resources */ = {isa = PBXBuildFile; fileRef = 444EC58D2219C44B00866069 /* lol.png */; };
 		44BE00032219338400B28014 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BE00022219338400B28014 /* MapViewController.swift */; };
-		44BE00052219362600B28014 /* lol.png in Resources */ = {isa = PBXBuildFile; fileRef = 44BE00042219362600B28014 /* lol.png */; };
 		A415CAB01EEA437900983607 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A415CAAF1EEA437900983607 /* AppDelegate.swift */; };
 		A415CAB21EEA437900983607 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A415CAB11EEA437900983607 /* ViewController.swift */; };
 		A415CAB71EEA437900983607 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A415CAB61EEA437900983607 /* Assets.xcassets */; };
@@ -27,8 +27,8 @@
 		11743B6508EE1635805282FC /* Pods-CoreMLSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreMLSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoreMLSample/Pods-CoreMLSample.release.xcconfig"; sourceTree = "<group>"; };
 		444EC5872219696D00866069 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		444EC58B2219BC2100866069 /* VideoHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoHelper.swift; sourceTree = "<group>"; };
+		444EC58D2219C44B00866069 /* lol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lol.png; sourceTree = "<group>"; };
 		44BE00022219338400B28014 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		44BE00042219362600B28014 /* lol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lol.png; sourceTree = "<group>"; };
 		8D71B44819C0A75797B48A8F /* Pods_CoreMLSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoreMLSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A415CAAC1EEA437900983607 /* CoreMLSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreMLSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A415CAAF1EEA437900983607 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,7 +90,7 @@
 				A415CAAF1EEA437900983607 /* AppDelegate.swift */,
 				A415CAB11EEA437900983607 /* ViewController.swift */,
 				44BE00022219338400B28014 /* MapViewController.swift */,
-				44BE00042219362600B28014 /* lol.png */,
+				444EC58D2219C44B00866069 /* lol.png */,
 				444EC58B2219BC2100866069 /* VideoHelper.swift */,
 				A415CAD51EEA4BC900983607 /* Main.storyboard */,
 				A415CAB61EEA437900983607 /* Assets.xcassets */,
@@ -182,7 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A415CAD91EEA4C1800983607 /* Main.storyboard in Resources */,
-				44BE00052219362600B28014 /* lol.png in Resources */,
+				444EC58E2219C44B00866069 /* lol.png in Resources */,
 				A415CABA1EEA437900983607 /* LaunchScreen.storyboard in Resources */,
 				A415CAB71EEA437900983607 /* Assets.xcassets in Resources */,
 				444EC5882219696D00866069 /* GoogleService-Info.plist in Resources */,
