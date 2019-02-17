@@ -41,6 +41,14 @@
                                         <rect key="frame" x="250" y="385" width="117" height="160"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rn9-Ax-bto">
+                                        <rect key="frame" x="122" y="498" width="62" height="47"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Record!!!"/>
+                                        <connections>
+                                            <segue destination="K1M-sE-JPS" kind="show" id="c7W-ua-KO3"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -96,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8f5-Pe-2NG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-119" y="-54"/>
+            <point key="canvasLocation" x="-119.2" y="-54.422788605697157"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="fbw-t7-2H3">
@@ -133,6 +141,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ddb-GB-knQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="804" y="-52.623688155922046"/>
+        </scene>
+        <!--Record Video View Controller-->
+        <scene sceneID="Au1-Ng-J6C">
+            <objects>
+                <viewController id="K1M-sE-JPS" customClass="RecordVideoViewController" customModule="CoreMLSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0bx-Eb-v0t"/>
+                        <viewControllerLayoutGuide type="bottom" id="pD2-K8-5me"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NZt-j2-J4Y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xVt-1Z-MO6">
+                                <rect key="frame" x="215" y="98" width="86" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="record again"/>
+                                <connections>
+                                    <action selector="record:" destination="K1M-sE-JPS" eventType="touchUpInside" id="LXD-Pk-Zsg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qUu-ei-LLI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1796" y="-107"/>
         </scene>
     </scenes>
 </document>
