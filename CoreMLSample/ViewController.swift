@@ -117,7 +117,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate {
                 .filter({ weapons.contains($0.identifier)})
                 .map({ "\($0.identifier) \($0.confidence)" })
             DispatchQueue.main.async {
-                print(classifications.joined(separator: "\n"))
                 self.predictLabel.text = classifications.joined(separator: "\n")
             }
         }
