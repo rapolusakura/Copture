@@ -8,8 +8,16 @@
 
 import Foundation
 import UIKit
+import MapKit
 
 class MapViewController: UIViewController {
     
+    @IBOutlet weak var mapView: MKMapView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let viewRegion = MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2D(latitude: CLLocationDegrees(41.893661957), longitude: CLLocationDegrees( -87.712942355)), 500, 500)
+        self.mapView.setRegion(viewRegion, animated: false)
+    }
 
 }

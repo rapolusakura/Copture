@@ -41,6 +41,14 @@
                                         <rect key="frame" x="250" y="385" width="117" height="160"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rn9-Ax-bto">
+                                        <rect key="frame" x="122" y="498" width="62" height="47"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Record!!!"/>
+                                        <connections>
+                                            <action selector="recordButtonPressed:" destination="0Xl-yk-nao" eventType="touchUpInside" id="vuw-ld-2gz"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -96,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8f5-Pe-2NG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-119" y="-54"/>
+            <point key="canvasLocation" x="-119.2" y="-54.422788605697157"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="fbw-t7-2H3">
@@ -129,6 +137,9 @@
                             </button>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="D5b-Jd-s62" id="7Pe-xc-OXa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ddb-GB-knQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
