@@ -12,6 +12,7 @@ import Vision
 import Firebase
 import FirebaseDatabase
 import AVFoundation
+import MobileCoreServices
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate {
     // Outlets to label and view
@@ -21,7 +22,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate {
     @IBOutlet private weak var previewView: UIView!
     @IBOutlet private weak var visionSwitch: UISwitch!
     @IBOutlet weak var imageView: UIImageView!
-
+    @IBAction func recordButtonPressed(_ sender: Any) {
+        VideoHelper.startMediaBrowser(delegate: self, sourceType: .camera)
+    }
+    
     // some properties used to control the app and store appropriate values
     
     let inceptionv3model = Inceptionv3()
@@ -126,6 +130,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate {
         self.requests = [classificationRequest]
     }
     
+    @objc func video(_ videoPath: String, didFinishSavingWithError error: Error?, contextInfo info: AnyObject) {
+        let title = (error == nil) ? "Success" : "Error"
+        let message = (error == nil) ? "Video was saved" : "Video failed to save"
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
     
     /// only support back camera
     var exifOrientationFromDeviceOrientation: Int32 {
@@ -193,5 +205,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        dismiss(animated: true, completion: nil)
+        
+        guard let mediaType = info[UIImagePickerControllerMediaType] as? String,
+            mediaType == (kUTTypeMovie as String),
+            let url = info[UIImagePickerControllerMediaURL] as? URL,
+            UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(url.path)
+            else { return }
+        
+        // Handle a movie capture
+        UISaveVideoAtPathToSavedPhotosAlbum(url.path, self, #selector(video(_:didFinishSavingWithError:contextInfo:)), nil)
+    }
 }
 
+extension ViewController: UINavigationControllerDelegate {
+}
