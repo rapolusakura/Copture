@@ -31,6 +31,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate {
     let inceptionv3model = Inceptionv3()
     private var videoCapture: VideoCapture!
     private var requests = [VNRequest]()
+    let thresh = 50.0
+    var caud: Double = 0.0
+    var cvid: Double = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +42,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate {
         
         let refHandle = ref.observe(DataEventType.value, with: { (snapshot) in
             let postDict = snapshot.value as? [String : AnyObject] ?? [:]
-            print(postDict)
+            var caud = postDict["Predictions"] as! Double
+            if (caud >= 50.0 || self.cvid >= 30) {
+                AudioServicesPlayAlertSound(SystemSoundID(1322))
+                VideoHelper.startMediaBrowser(delegate: self, sourceType: .camera)
+            }
+            if ((50*caud + 30*self.cvid)/100 > self.thresh){
+                AudioServicesPlayAlertSound(SystemSoundID(1322))
+                VideoHelper.startMediaBrowser(delegate: self, sourceType: .camera)
+            }
         })
         
         let singleTap = UITapGestureRecognizer(target: self,action:Selector("imageTapped"))
@@ -122,7 +133,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate {
                 .map({ "\($0.identifier) \($0.confidence)" })
             DispatchQueue.main.async {
                 self.predictLabel.text = classifications.joined(separator: "\n")
+//                if(classifications.count >= 1) {
+//                    var confidence = (classifications[classifications.count-1] as? VNClassificationObservation)?.confidence
+//                    print("confidence: \(confidence)")
+//                    guard case let self.caud = confidence as! Double
+//                        else {self.caud = 5}
+//                    print("confidence: \(confidence)")
+//                }
+
             }
+            
         }
         classificationRequest.imageCropAndScaleOption = VNImageCropAndScaleOption.centerCrop
         

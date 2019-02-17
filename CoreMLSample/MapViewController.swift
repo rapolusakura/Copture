@@ -16,7 +16,6 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        mapView.setCenter(CLLocationCoordinate2D(latitude: CLLocationDegrees(41.893661957), longitude: CLLocationDegrees( -87.712942355)), animated: true)
         let viewRegion = MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2D(latitude: CLLocationDegrees(41.893661957), longitude: CLLocationDegrees( -87.712942355)), 500, 500)
         self.mapView.setRegion(viewRegion, animated: false)
     }
