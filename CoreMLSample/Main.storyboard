@@ -92,7 +92,6 @@
                         <outlet property="previewView" destination="MPW-dG-rVE" id="6ZR-uF-fDC"/>
                         <outlet property="visionSwitch" destination="qdg-1O-NKq" id="466-ph-1qm"/>
                         <segue destination="uJE-U7-1SL" kind="show" identifier="clickedMap" id="fQW-NP-Su7"/>
-                        <segue destination="jve-1W-7Kc" kind="show" identifier="showVideo" id="6rz-7p-r9p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8f5-Pe-2NG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -134,27 +133,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ddb-GB-knQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="804" y="-52.623688155922046"/>
-        </scene>
-        <!--Video Playback-->
-        <scene sceneID="YSL-vO-tPn">
-            <objects>
-                <viewController id="jve-1W-7Kc" customClass="VideoPlayback" customModule="CoreMLSample" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="nDB-3Q-tgx"/>
-                        <viewControllerLayoutGuide type="bottom" id="RI4-YD-USu"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="BIj-fY-EuQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                    <connections>
-                        <outlet property="videoView" destination="BIj-fY-EuQ" id="CQA-Xa-jT4"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KGy-Jn-ifN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1510" y="-53"/>
         </scene>
     </scenes>
 </document>
