@@ -1,4 +1,4 @@
-# Core-ML-Sample
+# Copture
 
 A Demo using Core ML, Vision Framework and Swift 4.
 
