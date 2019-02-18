@@ -43,7 +43,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate {
         let refHandle = ref.observe(DataEventType.value, with: { (snapshot) in
             let postDict = snapshot.value as? [String : AnyObject] ?? [:]
             var caud = postDict["Predictions"] as! Double
-            if (caud >= 50.0 || self.cvid >= 30) {
+            if (caud >= 45.0 || self.cvid >= 35) {
                 AudioServicesPlayAlertSound(SystemSoundID(1322))
                 VideoHelper.startMediaBrowser(delegate: self, sourceType: .camera)
             }
@@ -139,7 +139,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate {
                 print(confidence)
                 
                 if let confidence = Double(confidence) {
-                    if (confidence >= 0.35) {
+                    if (confidence >= 0.20) {
                         AudioServicesPlayAlertSound(SystemSoundID(1322))
                         VideoHelper.startMediaBrowser(delegate: self, sourceType: .camera)
                     }

@@ -42,9 +42,12 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rn9-Ax-bto">
-                                        <rect key="frame" x="122" y="498" width="62" height="47"/>
+                                        <rect key="frame" x="129" y="526" width="62" height="47"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Record!!!"/>
+                                        <state key="normal" title="Record">
+                                            <color key="titleColor" red="1" green="0.0" blue="0.018721711901257265" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.92052182299999996" green="0.4291866963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="recordButtonPressed:" destination="0Xl-yk-nao" eventType="touchUpInside" id="vuw-ld-2gz"/>
                                         </connections>
